@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <base href="/">
+    <title>Vendor's Booking History</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.addons.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="/assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+<!--    <link rel="stylesheet" href="/assets/css/vendor/booking.css">-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="container-scroller">
+    <!-- HEADER -->
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+            <a class="navbar-brand brand-logo" href="/vendor/dashboard">
+                <img src="assets/images/uom_logo.png" alt="logo"/> </a>
+        </div>
+        <div th:replace="admin/dashboard.html :: langChoice"></div>
+    </nav>
+
+    <!-- SIDBAR -->
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <div th:replace="vendor/dashboard.html :: navbar"></div>
+        <div th:replace="vendor/dashboard.html :: logoutPanel"></div>
+
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <!-- Page Title Header Starts-->
+                <div th:replace="admin/dashboard.html :: header"></div>
+                <!-- Page Title Header Ends-->
+                <div class="main-body">
+                    <div class="container mt-5">
+                        <h4>Your Customer Booking History:</h4>
+                        <table class="table table-borderless main">
+                            <thead>
+                            <tr class="head">
+                                <th scope="col" class="ml-2">
+                                    <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> </div>
+                                </th>
+                                <th scope="col">Booking ID</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Property Name</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Profit</th>
+                                <th scope="col">Night</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="rounded bg-white">
+                                <th scope="row">
+                                    <div class="form-check"> <input class="form-check-input" type="checkbox" value=""> </div>
+                                </th>
+                                <td class="order-color">#46820137</td>
+                                <td>Mar 27</td>
+                                <td class="d-flex align-items-center"> <img src="/assets/images/faces/face4.jpg" class="rounded-circle" width="25"> <span class="ml-2">Keagan Prohaska</span> </td>
+                                <td class="order-color">Holiday Inn</td>
+                                <td>£82.10</td>
+                                <td>£54.50</td>
+                                <td>2</td>
+                                <td>
+                                    <div class="dropdown"> <button class="btn btn-secondary dropdown-toggle" type="button"  data-toggle="dropdown" aria-expanded="false"> Pending </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li><a class="dropdown-item" href="#">Accept</a></li>
+                                            <li><a class="dropdown-item" href="#">Cancel</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="rounded bg-white">
+                                <th scope="row">
+                                    <div class="form-check"> <input class="form-check-input" type="checkbox" value="" > </div>
+                                </th>
+                                <td class="order-color">#32237115</td>
+                                <td>Mar 29</td>
+                                <td class="d-flex align-items-center"> <img src="assets/images/faces/face16.jpg" class="rounded-circle" width="25"> <span class="ml-2">Jerry Yang</span> </td>
+                                <td class="order-color">Premium Plus</td>
+                                <td>£34.50</td>
+                                <td>£22.40</td>
+                                <td>1</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm" type="button"> Paid </button>
+                                </td>
+                            </tr>
+                            <tr class="rounded bg-white">
+                                <th scope="row">
+                                    <div class="form-check"> <input class="form-check-input" type="checkbox" value="" > </div>
+                                </th>
+                                <td class="order-color">#07459691</td>
+                                <td>Apr 3</td>
+                                <td class="d-flex align-items-center"> <img src="assets/images/faces/face5.jpg" class="rounded-circle" width="25"> <span class="ml-2"> Mike Wang</span></td>
+                                <td class="order-color">The Stafford London</td>
+                                <td>£75.70</td>
+                                <td>£54.10</td>
+                                <td>1</td>
+                                <td>
+                                    <div class="dropdown"> <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Unpaid </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li><a class="dropdown-item" href="#">Yes</a></li>
+                                            <li><a class="dropdown-item" href="#">No</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="rounded bg-white">
+                                <th scope="row">
+                                    <div class="form-check"> <input class="form-check-input" type="checkbox" value=""> </div>
+                                </th>
+                                <td class="order-color">#03804801</td>
+                                <td>Apr 26</td>
+                                <td class="d-flex align-items-center"> <img src="assets/images/faces/face8.jpg" class="rounded-circle" width="25"> <span class="ml-2">Sara Burns</span> </td>
+                                <td class="order-color">Manchester One</td>
+<!--                                <td>-->
+<!--                                    <div class="dropdown"> <button class="btn btn-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Fullfilled </button>-->
+<!--                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--                                            <li><a class="dropdown-item" href="#">Yes</a></li>-->
+<!--                                            <li><a class="dropdown-item" href="#">No</a></li>-->
+<!--                                            <li><a class="dropdown-item" href="#">Hold</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+                                <td>£65.90</td>
+                                <td>£39.20</td>
+                                <td>2</td>
+                                <td>
+                                    <div class="dropdown"> <button class="btn btn-warning  dropdown-toggle" type="button"  data-toggle="dropdown" aria-expanded="false"> Unpaid </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li><a class="dropdown-item" href="#">Yes</a></li>
+                                            <li><a class="dropdown-item" href="#">No</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="rounded bg-white">
+                                <th scope="row">
+                                    <div class="form-check"> <input class="form-check-input" type="checkbox" value=""> </div>
+                                </th>
+                                <td class="order-color">#17331429</td>
+                                <td>May 9</td>
+                                <td class="d-flex align-items-center"> <img src="assets/images/faces/face9.jpg" class="rounded-circle" width="25"> <span class="ml-2">Amparo Manjón</span> </td>
+                                <td class="order-color">Hotel 41</td>
+<!--                                <td>-->
+<!--                                    <div class="dropdown"> <button class="btn btn-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Fullfilled </button>-->
+<!--                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--                                            <li><a class="dropdown-item" href="#">Yes</a></li>-->
+<!--                                            <li><a class="dropdown-item" href="#">No</a></li>-->
+<!--                                            <li><a class="dropdown-item" href="#">Hold</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+                                <td>£209.50</td>
+                                <td>£182.40</td>
+                                <td>3</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm" type="button"> Paid </button>
+                                </td>
+                            </tr>
+                            <tr class="rounded bg-white">
+                                <th scope="row">
+                                    <div class="form-check"> <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> </div>
+                                </th>
+                                <td class="order-color">£03804801</td>
+                                <td>Jun 8</td>
+                                <td class="d-flex align-items-center"> <img src="https://i.imgur.com/qddlYmO.jpg" class="rounded-circle" width="25"> <span class="ml-2">Shelly Lin</span> </td>
+                                <td class="order-color">The Resident Covent Garden</td>
+                                <!--                                <td>-->
+<!--                                    <div class="dropdown"> <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Pending Receipt </button>-->
+<!--                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--                                            <li><a class="dropdown-item" href="#">Yes</a></li>-->
+<!--                                            <li><a class="dropdown-item" href="#">No</a></li>-->
+<!--                                            <li><a class="dropdown-item" href="#">Hold</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+                                <td>£394.50</td>
+                                <td>£182.40</td>
+                                <td>6</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm" type="button"> Paid </button>
+                                </td>
+                            </tr>
+                            <tr class="rounded bg-white">
+                                <th scope="row">
+                                    <div class="form-check"> <input class="form-check-input" type="checkbox" value="" > </div>
+                                </th>
+                                <td class="order-color">#95038925</td>
+                                <td>Aug 18</td>
+                                <td class="d-flex align-items-center"> <img src="https://i.imgur.com/0LKZQYM.jpg" class="rounded-circle" width="25"> <span class="ml-2">Anna Holt</span> </td>
+                                <td class="order-color">Kimpton</td>
+                                <!--                                <td>-->
+<!--                                    <div class="dropdown"> <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Pending Receipt </button>-->
+<!--                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">-->
+<!--                                            <li><a class="dropdown-item" href="#">Yes</a></li>-->
+<!--                                            <li><a class="dropdown-item" href="#">No</a></li>-->
+<!--                                            <li><a class="dropdown-item" href="#">Hold</a></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                </td>-->
+                                <td>£164.50</td>
+                                <td>£87.40</td>
+                                <td>2</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm" type="button"> Paid </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br>
+                <footer class="footer">
+                    <div class="container-fluid clearfix">
+                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Che-Jui Yang's Application</span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<body>

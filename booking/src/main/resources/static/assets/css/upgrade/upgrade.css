@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+    background: linear-gradient(to right, rgba(23, 23, 124, 1) 0%, rgba(0, 0, 90, 1) 100%);
+    font-family: 'Roboto', sans-serif
+}
+
+p.pf {
+    font-size: 29px;
+    color: #CBCCFF;
+    font-weight: bold
+}
+
+p.ps {
+    font-size: 28px;
+    color: #A7A9FF
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px
+}
+
+p.text-left {
+    color: #676769;
+    font-weight: bold !important;
+    font-size: 14px
+}
+
+label.radio {
+    cursor: pointer
+}
+
+label.radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none
+}
+
+label.radio span {
+    padding: 8px 43px;
+    border: 1.5px solid #8F7AB2;
+    display: inline-block;
+    color: #68696B;
+    border-radius: 3px;
+    font-size: 10px !important;
+    font-weight: bold
+}
+
+label.radio input:checked+span {
+    border-color: #D15D84;
+    background: linear-gradient(to right, rgba(242, 82, 106, 1) 43%, rgba(218, 18, 107, 1) 100%);
+    color: #ffc5d5
+}
+
+p {
+    text-align: center;
+    margin-bottom: 0
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 2rem
+}
+
+.form-control {
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    border-bottom: 1.5px solid #E6EBEE
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1.5px solid #E6EBEE
+}
+
+.form-control-placeholder {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    transition: all 200ms;
+    opacity: 0.5;
+    font-size: 70%
+}
+
+.form-control:focus+.form-control-placeholder,
+.form-control:valid+.form-control-placeholder {
+    font-size: 70%;
+    transform: translate3d(0, -90%, 0);
+    opacity: 0.5;
+    top: 10px
+}
+
+.signin {
+    font-size: 12px;
+    color: #868686;
+    font-weight: 500
+}
+
+.signin a {
+    color: #967CB9 !important;
+    font-weight: bold
+}
+
+.btn-block {
+    border: 1px solid #7931DB;
+    background: linear-gradient(to right, rgba(127, 36, 255, 1) 0%, rgba(58, 22, 254, 1) 100%);
+    border-radius: 3px
+}
+
+.btn-block span {
+    font-size: 10px !important;
+    color: #dfc5ff;
+    font-weight: bold
+}
+
+@media screen and (max-width: 767px) {
+    .radio {
+        margin: 5px 0
+    }
+
+    .mydetails {
+        text-align: center
+    }
+
+    .text-left {
+        text-align: center !important
+    }
+
+    .signin {
+        padding-bottom: 10px;
+        margin-top: 0
+    }
+
+    .pt-3 {
+        padding-top: 0px !important
+    }
+}

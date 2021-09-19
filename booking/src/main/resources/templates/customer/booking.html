@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <base href="/">
+    <title>Book a Hotel</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
+    <link rel="stylesheet" href="/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/assets/vendors/css/vendor.bundle.addons.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/assets/css/shared/style.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="/assets/css/demo_1/style.css">
+    <!-- End Layout styles -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+    <link rel="stylesheet" href="/assets/css/booking/form.css">
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"></script>-->
+<!--    <script src="https://use.fontawesome.com/releases/v5.7.2/css/all.css"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="container-scroller">
+    <!-- HEADER -->
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+            <a class="navbar-brand brand-logo" href="/customer/dashboard">
+                <img src="assets/images/uom_logo.png" alt="logo"/> </a>
+        </div>
+        <div th:replace="admin/dashboard.html :: langChoice"></div>
+    </nav>
+
+    <!-- SIDBAR -->
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <div th:replace="customer/dashboard.html :: navbar"></div>
+        <div th:replace="customer/dashboard.html :: logoutPanel"></div>
+
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <!-- Page Title Header Starts-->
+                <div th:replace="customer/dashboard.html :: header"></div>
+                <!-- Page Title Header Ends-->
+                <div class="row">
+                    <div class="container my-sm-5 border p-0 bg-sec-light">
+                        <div id="content">
+                            <div class="bg-light p-2 px-md-4 px-3 shadow-sm">
+                                <div class="d-flex align-items-center">
+                                    <div class="user-select-none">Home</div>
+                                    <div class="fas fa-angle-right px-2"></div>
+                                    <div id="navigator" class="text-primary"></div>
+                                </div>
+                            </div>
+                            <div class="d-sm-flex align-items-sm-center py-sm-3 px-md-3 location"> <input type="text" required placeholder="Location" class="mx-sm-2 mx-3 my-sm-0 my-2 form-control"> <input type="text" required placeholder="From" class=" mx-md-2 mx-sm-1 mx-3 my-sm-0 my-2 form-control"> <input type="text" required placeholder="To" class="mx-sm-2 mx-3 my-sm-0 my-2 form-control"> <input type="submit" value="search" class="btn btn-primary mx-3 my-sm-0 mb-2"> </div>
+                            <div class="d-sm-flex">
+                                <div class="me-sm-2">
+                                    <div id="filter" class="p-2 bg-light ms-md-4 ms-sm-2 border">
+                                        <div class="border-bottom h5 text-uppercase">Filter By</div>
+                                        <div class="box border-bottom">
+                                            <div class="box-label text-uppercase d-flex align-items-center">Price <button class="btn ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#inner-box" aria-expanded="false" aria-controls="inner-box"> <span class="fas fa-plus"></span> </button> </div>
+                                            <div id="inner-box" class="collapse show">
+                                                <div class="my-1"> <label class="tick">Less than £40 <input type="checkbox" checked="checked"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">£40 - £100 <input type="checkbox" checked> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">£100 - £300 <input type="checkbox" checked> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">£300 - £500 <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">£500 - £800 <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">£800 - £1,000 <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Above £1,000 <input type="checkbox"> <span class="check"></span> </label> </div>
+                                            </div>
+                                        </div>
+                                        <div class="box border-bottom">
+                                            <div class="box-label text-uppercase d-flex align-items-center">Property Type <button class="btn ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#property" aria-expanded="false" aria-controls="property"> <span class="fas fa-plus"></span> </button> </div>
+                                            <div id="property" class="collapse">
+                                                <div class="my-1"> <label class="tick">Hotels <input type="checkbox" checked="checked"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Apartments <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Guest houses <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Resorts <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Villas <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Lodges <input type="checkbox" checked> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Holiday Homes <input type="checkbox"> <span class="check"></span> </label> </div>
+                                            </div>
+                                        </div>
+                                        <div class="box border-bottom">
+                                            <div class="box-label text-uppercase d-flex align-items-center">Amenities <button class="btn ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#amenities" aria-expanded="false" aria-controls="amenities"> <span class="fas fa-plus"></span> </button> </div>
+                                            <div id="amenities" class="collapse show">
+                                                <div class="my-1"> <label class="tick">Parking <input type="checkbox" checked="checked"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Pets Allowed <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Room Service <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Family Rooms <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Free Wifi <input type="checkbox" checked> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Non-smoking Rooms <input type="checkbox" checked> <span class="check"></span> </label> </div>
+                                            </div>
+                                        </div>
+                                        <div class="box">
+                                            <div class="box-label text-uppercase d-flex align-items-center">Room Facilities <button class="btn ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#room-facilities" aria-expanded="false" aria-controls="room-facilities"> <span class="fas fa-plus"></span> </button> </div>
+                                            <div id="room-facilities" class="collapse">
+                                                <div class="my-1"> <label class="tick">Air Condentioning <input type="checkbox" checked="checked"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Desk <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Balcony <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Flat Screen TV <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Coffee/Tea Maker <input type="checkbox"> <span class="check"></span> </label> </div>
+                                                <div class="my-1"> <label class="tick">Washing Machine <input type="checkbox" checked> <span class="check"></span> </label> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-2 border" id="hotels">
+                                    <div class="hotel py-2 px-2 pb-4 border-bottom">
+                                        <div class="row">
+                                            <div class="col-lg-3"> <img src="https://i.imgur.com/6V9bhVG.jpeg" alt="" class="hotel-img"> </div>
+                                            <div class="col-lg-9">
+                                                <div class="d-md-flex align-items-md-center">
+                                                    <div class="name">DoubleTree by Hilton Manchester Airport<br><span class="city">Manchester, Greater Manchester</span> </div>
+                                                </div>
+                                                <div class="rating"> <span class="ion-ios-star"></span> <span class="ion-ios-star"></span> <span class="ion-ios-star"></span> <span class="ion-ios-star"></span> <!-- Book now Enquiry -->
+                                                </div>
+                                                <div class="d-flex flex-column tags pt-1">
+                                                    <div><span class="fas ion-ios-wifi"></span> Free wifi</div>
+                                                    <div><span class="fas ion-ios-restaurant"></span> Restaurant</div>
+                                                    <div><span class="ion-ios-car"></span> Free Parking</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end mt-1"> <b>£ 80.12 / Night</b></div>
+                                        <div class="d-flex justify-content-end mt-1">
+                                            <div class="btn enquiry text-uppercase mx-2">Enquiry</div>
+                                            <div class="btn btn-primary text-uppercase">Book Now</div>
+                                        </div>
+                                    </div>
+                                    <div class="hotel py-2 px-2 pb-4 border-bottom">
+                                        <div class="row">
+                                            <div class="col-lg-3"> <img src="https://i.imgur.com/4MpAyl3.jpeg" alt="" class="hotel-img"> </div>
+                                            <div class="col-lg-9">
+                                                <div class="d-md-flex align-items-md-center">
+                                                    <div class="name">Holiday Inn Plus<br><span class="city">Manchester, Greater Manchester</span> </div>
+                                                </div>
+                                                <div class="rating"> <span class="ion-ios-star"></span> <span class="ion-ios-star"></span> <span class="ion-ios-star"></span> <span class="fas fa-star"></span> <!-- Book now Enquiry -->
+                                                </div>
+                                                <div class="d-flex flex-column tags pt-1">
+                                                    <div><span class="fas ion-ios-wifi"></span> Free wifi</div>
+                                                    <div><span class="ion-ios-cafe"></span> Cafe</div>
+                                                    <div><span class="ion-ios-card"></span> Free Cancellation</div>
+                                                    <div><span class="ion-ios-paper"></span> Express check-in</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end mt-1"> <b>£ 41.85 / Night</b></div>
+                                        <div class="d-flex justify-content-end mt-1">
+                                            <div class="btn enquiry text-uppercase mx-2">Enquiry</div>
+                                            <div class="btn btn-primary text-uppercase">Book Now</div>
+                                        </div>
+                                    </div>
+                                    <div class="hotel py-2 px-2 pb-4">
+                                        <div class="row">
+                                            <div class="col-lg-3"> <img src="https://i.imgur.com/a6M0OWt.jpeg" alt="" class="hotel-img"> </div>
+                                            <div class="col-lg-9">
+                                                <div class="d-md-flex align-items-md-center">
+                                                    <div class="name">
+                                                        The Stafford London
+                                                        <br>
+                                                        <span class="city">London, Greater London</span>
+                                                    </div>
+                                                </div>
+                                                <div class="rating"> <span class="ion-ios-star"></span> <span class="ion-ios-star"></span> <span class="ion-ios-star"></span> <span class="ion-ios-star"></span> <span class="ion-ios-star"></span> <!-- Book now Enquiry -->
+                                                </div>
+                                                <div class="d-flex flex-column tags pt-1">
+                                                    <div><span class="ion-ios-card"></span> Free Cancellation</div>
+                                                    <div><span class="fas ion-ios-paper"></span> Express check-in</div>
+                                                    <div><span class="fas ion-ios-restaurant"></span> Restaurant</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end mt-1"> <b>£ 124.70 / Night</b></div>
+                                        <div class="d-flex justify-content-end mt-1">
+                                            <div class="btn enquiry text-uppercase mx-2">Enquiry</div>
+                                            <div class="btn btn-primary text-uppercase">Book Now</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Starts Here-->
+                <footer class="footer">
+                    <div class="container-fluid clearfix">
+                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Che-Jui Yang's Application</span>
+                    </div>
+                </footer>
+            </div>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<body>
