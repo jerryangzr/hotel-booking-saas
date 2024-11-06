@@ -3,7 +3,7 @@ This project is a web-based hotel booking application that allows users to acces
 
 #### Installation/Deployment Guide
 
-This application requires Mysql Data base to work, install Xampp or Wampp server application or the Mysql server of your choice and import the database SQL script. 
+This application requires the Mysql Database to work, install Xampp or Wampp server application or the Mysql server of your choice and import the database SQL script. 
 
 * Go to src -> resources in src and pick your db and import to MySQL db make sure your DB name is spring-boot-bill-payment
 * Edit the application.properties file located at src -> resource 
@@ -41,6 +41,35 @@ Passwords are the same as user
 
 ## Complaint Application Form
 ![image](https://github.com/user-attachments/assets/a250afd0-71df-4665-ac20-1f987374f593)
+
+## Vendor’s Dashboard
+![image](https://github.com/user-attachments/assets/280c4e79-bba5-4019-a5ec-79f618b8285e)
+
+## Vendor's Application Dashboard
+![image](https://github.com/user-attachments/assets/c656186c-59b7-4a75-883f-5ee313caeb9f)
+
+## Vendor's Customer Complaint Management
+![image](https://github.com/user-attachments/assets/0f4b61c5-2e6a-473a-86f3-3070dbb2582e)
+
+## Vendor's Booking Management
+![image](https://github.com/user-attachments/assets/74214584-a228-42b8-a4ab-a3ea20194eea)
+
+## Admin's Dashboard
+![image](https://github.com/user-attachments/assets/bbcbefb8-a5a0-49d1-a8ef-533748f3ce29)
+
+## User's Dashboard
+![image](https://github.com/user-attachments/assets/cb804b44-0e74-4a49-843e-65bec9e79bb8)
+
+## Admin's Complaints Management
+![image](https://github.com/user-attachments/assets/f23c00ab-5de5-4c96-b200-3f1b8a403053)
+
+## Logout
+![image](https://github.com/user-attachments/assets/59ccb1e0-6353-48eb-b7b3-30191bdec2ef)
+![image](https://github.com/user-attachments/assets/481b988d-401f-4d41-8d1e-3008b0503f9d)
+
+## Illegal Access
+![image](https://github.com/user-attachments/assets/354616d1-922c-4da0-86a3-21eb773d960c)
+
 
 
 
